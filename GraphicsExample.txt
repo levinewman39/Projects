@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Niagara Presentation XML -->
+<px version="1.0" media="workbench:WbPxMedia">
+<import>
+  <module name="baja"/>
+  <module name="bajaui"/>
+  <module name="converters"/>
+  <module name="gx"/>
+  <module name="kitPx"/>
+</import>
+<content>
+<ScrollPane>
+
+  <CanvasPane name="content" viewSize="1280.0,800.0" scale="fitRatio" minScaleFactor="0.5" maxScaleFactor="1.0">
+
+    <PxInclude layout="0.0,0.0,1280.0,800.0" ord="file:^px/Includes/Background.px">
+      <ValueBinding ord="file:^px/Includes/Background.px"/>
+    </PxInclude>
+
+    <BoundLabel layout="900.0,360.0,70.0,20.0" text="       Trend" font="bold 11.0pt Tahoma" background="white" halign="left" border="1.0 solid silver" mouseOver="highlight" padding="0.0 0.0 0.0 2.0">
+      <BoundLabelBinding hyperlink="history:"/>
+    </BoundLabel>
+
+    <BoundLabel layout="545.0,550.0,80.0,20.0" font="bold 11.0pt Tahoma">
+      <BoundLabelBinding ord="station:|slot:/Drivers/NiagaraNetwork/MTU_Welcome/points/VAV3/OccupancyCmd" statusEffect="none">
+        <IStatusToSimple name="background">
+          <Brush name="disabled" value="#dddddd"/>
+          <Brush name="fault" value="#ffaa26"/>
+          <Brush name="down" value="yellow"/>
+          <Brush name="alarm" value="red"/>
+          <Brush name="stale" value="#d6cbae"/>
+          <Brush name="overridden" value="#d88aff"/>
+          <Brush name="nullStatus" value="null"/>
+          <Brush name="unackedAlarm" value="null"/>
+        </IStatusToSimple>
+        <ObjectToString name="text" format="%out.value%"/>
+      </BoundLabelBinding>
+    </BoundLabel>
+
+    <BoundLabel layout="545.0,570.0,80.0,19.0" font="bold 11.0pt Tahoma" foreground="black">
+      <BoundLabelBinding ord="station:|slot:/Drivers/NiagaraNetwork/MTU_Welcome/points/VAV3/OccupancyStatus" statusEffect="none">
+        <ObjectToString name="text" format="%out.value% "/>
+        <IBooleanToSimple name="background">
+          <Brush name="trueValue" value="linearGradient( stop(0.0% lime) stop(100.0% #c0ffc0) )"/>
+          <Brush name="falseValue" value="linearGradient( stop(0.0% #ff8000) stop(100.0% #ffdfbf) )"/>
+        </IBooleanToSimple>
+      </BoundLabelBinding>
+    </BoundLabel>
+
+    <BoundLabel layout="545.0,590.0,80.0,20.0" font="bold 11.0pt Tahoma" border="1.0 solid silver">
+      <BoundLabelBinding ord="station:|slot:/Drivers/NiagaraNetwork/MTU_Welcome/points/VAV3/DamperPos" popupEnabled="false">
+        <ObjectToString name="text" format="%out.value%"/>
+      </BoundLabelBinding>
+    </BoundLabel>
+
+    <BoundLabel layout="900.0,360.0,20.0,20.0" image="module://icons/x16/charts/line.png" font="bold 11.0pt Tahoma" padding="0.0 0.0 0.0 2.0">
+      <BoundLabelBinding hyperlink="history:"/>
+    </BoundLabel>
+
+    <BoundLabel layout="545.0,610.0,80.0,20.0" font="bold 11.0pt Tahoma" border="1.0 solid silver">
+      <BoundLabelBinding ord="station:|slot:/Drivers/NiagaraNetwork/MTU_Welcome/points/VAV3/DuctHeatLoad" popupEnabled="false">
+        <ObjectToString name="text" format="%out.value%"/>
+      </BoundLabelBinding>
+    </BoundLabel>
+
+    <BoundLabel layout="765.0,550.0,70.0,20.0" font="bold 11.0pt Tahoma" border="1.0 solid silver" mouseOver="highlight" padding="0.0 0.0 0.0 2.0">
+      <BoundLabelBinding ord="station:|slot:/Drivers/NiagaraNetwork/MTU_Welcome/points/VAV3/OccCoolSP" statusEffect="color">
+        <ObjectToString name="text" format=" %out.value%"/>
+      </BoundLabelBinding>
+    </BoundLabel>
+
+    <BoundLabel layout="440.0,420.0,70.0,22.0" font="bold 11.0pt Tahoma" border="right(1.0 outset black) bottom(1.0 outset grey)" padding="0.0 0.0 0.0 2.0">
+      <BoundLabelBinding ord="station:|slot:/Drivers/NiagaraNetwork/MTU_Welcome/points/VAV3/DamperPos" popupEnabled="false" statusEffect="none">
+        <ObjectToString name="text" format=" %out.value%"/>
+      </BoundLabelBinding>
+      <BoundLabelBinding ord="station:|slot:/Drivers/NiagaraNetwork/MTU_Welcome/points/VAV3/DamperPos" statusEffect="color"/>
+    </BoundLabel>
+
+    <BoundLabel layout="670.0,420.0,60.0,22.0" font="bold 11.0pt Tahoma" border="right(1.0 outset black) bottom(1.0 outset grey)" padding="0.0 0.0 0.0 2.0">
+      <BoundLabelBinding ord="station:|slot:/Drivers/NiagaraNetwork/MTU_Welcome/points/VAV3/HtgVlv" statusEffect="color">
+        <ObjectToString name="text" format=" %out.value%"/>
+      </BoundLabelBinding>
+    </BoundLabel>
+
+    <BoundLabel layout="335.0,570.0,80.0,20.0" font="bold 11.0pt Tahoma" border="1.0 solid silver" padding="0.0 0.0 0.0 2.0">
+      <BoundLabelBinding ord="station:|slot:/Drivers/NiagaraNetwork/MTU_Welcome/points/VAV3/ActFlowSP" statusEffect="color">
+        <ObjectToString name="text" format=" %out.value%"/>
+      </BoundLabelBinding>
+    </BoundLabel>
+
+    <BoundLabel layout="990.0,320.0,60.0,19.0" font="bold 11.0pt Tahoma" background="white" halign="left" border="top(0.5 solid silver) right(1.5 solid silver) bottom(1.5 solid silver) left(0.5 solid silver)" padding="0.0 0.0 0.0 2.0">
+      <BoundLabelBinding ord="station:|slot:/Drivers/NiagaraNetwork/MTU_Welcome/points/VAV3/DischargeTemp" popupEnabled="false" statusEffect="none">
+        <ObjectToString name="text" format=" %out.value%"/>
+      </BoundLabelBinding>
+    </BoundLabel>
+
+    <BoundLabel layout="840.0,475.0,68.20000000000005,20.0" font="bold 11.0pt Tahoma" border="1.0 solid black" padding="0.0 0.0 0.0 2.0">
+      <BoundLabelBinding ord="slot:ComSensor1Temp" popupEnabled="false" statusEffect="color">
+        <ObjectToString name="text" format="%out.value%"/>
+      </BoundLabelBinding>
+    </BoundLabel>
+
+    <BoundLabel layout="335.0,590.0,80.0,20.0" font="bold 11.0pt Tahoma" background="white" border="1.0 solid silver" padding="0.0 0.0 0.0 2.0">
+      <BoundLabelBinding ord="station:|slot:/Drivers/NiagaraNetwork/MTU_Welcome/points/VAV3/MinFlowSP" statusEffect="none">
+        <ObjectToString name="text" format=" %out.value%"/>
+      </BoundLabelBinding>
+    </BoundLabel>
+
+    <BoundLabel layout="335.0,610.0,80.0,20.0" font="bold 11.0pt Tahoma" background="white" border="1.0 solid silver" padding="0.0 0.0 0.0 2.0">
+      <BoundLabelBinding ord="station:|slot:/Drivers/NiagaraNetwork/MTU_Welcome/points/VAV3/MaxFlowCoolSP" statusEffect="none">
+        <ObjectToString name="text" format=" %out.value%"/>
+      </BoundLabelBinding>
+    </BoundLabel>
+
+    <BoundLabel layout="765.0,570.0,70.0,20.0" font="bold 11.0pt Tahoma" border="1.0 solid silver" mouseOver="highlight" padding="0.0 0.0 0.0 2.0">
+      <BoundLabelBinding ord="station:|slot:/Drivers/NiagaraNetwork/MTU_Welcome/points/VAV3/OccHeatSP" statusEffect="color">
+        <ObjectToString name="text" format=" %out.value%"/>
+      </BoundLabelBinding>
+    </BoundLabel>
+
+    <BoundLabel layout="335.0,550.0,80.0,20.0" font="bold 11.0pt Tahoma" background="white" border="1.0 solid silver" padding="0.0 0.0 0.0 2.0">
+      <BoundLabelBinding ord="station:|slot:/Drivers/NiagaraNetwork/MTU_Welcome/points/VAV3/ActFlow" popupEnabled="false" statusEffect="none">
+        <ObjectToString name="text" format=" %out.value%"/>
+      </BoundLabelBinding>
+    </BoundLabel>
+
+    <BoundLabel layout="765.0,590.0,70.0,20.0" font="bold 11.0pt Tahoma" border="1.0 solid silver" mouseOver="highlight" padding="0.0 0.0 0.0 2.0">
+      <BoundLabelBinding ord="station:|slot:/Drivers/NiagaraNetwork/MTU_Welcome/points/VAV3/UnoccCoolSP" statusEffect="color">
+        <ObjectToString name="text" format=" %out.value%"/>
+      </BoundLabelBinding>
+    </BoundLabel>
+
+    <BoundLabel layout="765.0,610.0,70.0,20.0" font="bold 11.0pt Tahoma" border="1.0 solid silver" mouseOver="highlight" padding="0.0 0.0 0.0 2.0">
+      <BoundLabelBinding ord="station:|slot:/Drivers/NiagaraNetwork/MTU_Welcome/points/VAV3/UnoccHeatSP" statusEffect="color">
+        <ObjectToString name="text" format=" %out.value%"/>
+      </BoundLabelBinding>
+    </BoundLabel>
+
+    <BoundLabel layout="975.0,570.0,80.0,20.0" font="bold 11.0pt Tahoma" border="1.0 solid silver" mouseOver="highlight" padding="0.0 0.0 0.0 2.0">
+      <BoundLabelBinding ord="station:|slot:/Drivers/NiagaraNetwork/MTU_Welcome/points/VAV3/ComSensor1CO2" popupEnabled="false" statusEffect="color">
+        <ObjectToString name="text" format=" %out.value%"/>
+      </BoundLabelBinding>
+    </BoundLabel>
+
+    <BoundLabel layout="975.0,590.0,80.0,20.0" font="bold 11.0pt Tahoma" border="1.0 solid silver" mouseOver="highlight" padding="0.0 0.0 0.0 2.0">
+      <BoundLabelBinding ord="station:|slot:/Drivers/NiagaraNetwork/MTU_Welcome/points/VAV3/CO2Setpoint" statusEffect="color">
+        <ObjectToString name="text" format=" %out.value%"/>
+      </BoundLabelBinding>
+    </BoundLabel>
+
+    <BoundLabel layout="290.0,250.0,558.0,165.0" image="module://kitPxGraphics/TerminalUnits/TerminalUnit_CO.png"/>
+
+    <BoundLabel layout="435.0,315.0,50.0,56.0">
+      <ValueBinding ord="station:|slot:/Drivers/NiagaraNetwork/MTU_Welcome/points/VAV3/DamperPos">
+        <INumericToSimple name="image" map="gx:Image -inf:16.666666666666668=module://kitPxGraphics/Dampers/Damper_Round_TerminalUnit/Damper_Round_TerminalUnit_0.png;16.666666666666668:33.333333333333336=module://kitPxGraphics/Dampers/Damper_Round_TerminalUnit/Damper_Round_TerminalUnit_1.png;33.333333333333336:50.0=module://kitPxGraphics/Dampers/Damper_Round_TerminalUnit/Damper_Round_TerminalUnit_2.png;50.0:66.66666666666667=module://kitPxGraphics/Dampers/Damper_Round_TerminalUnit/Damper_Round_TerminalUnit_3.png;66.66666666666667:83.33333333333334=module://kitPxGraphics/Dampers/Damper_Round_TerminalUnit/Damper_Round_TerminalUnit_4.png;83.33333333333334:+inf=module://kitPxGraphics/Dampers/Damper_Round_TerminalUnit/Damper_Round_TerminalUnit_5.png;default=module://kitPxGraphics/Dampers/Damper_Round_TerminalUnit/Damper_Round_TerminalUnit_0.png;"/>
+      </ValueBinding>
+    </BoundLabel>
+
+    <BoundLabel layout="660.0,290.0,95.0,99.0">
+      <ValueBinding ord="station:|slot:/Drivers/NiagaraNetwork/MTU_Welcome/points/VAV2/HtgVlv">
+        <INumericToSimple name="image" map="gx:Image -inf:20.0=module://kitPxGraphics/Coils/Coils_Heating/Coils_Heating_0.png;20.0:40.0=module://kitPxGraphics/Coils/Coils_Heating/Coils_Heating_1.png;40.0:60.0=module://kitPxGraphics/Coils/Coils_Heating/Coils_Heating_2.png;60.0:80.0=module://kitPxGraphics/Coils/Coils_Heating/Coils_Heating_3.png;80.0:+inf=module://kitPxGraphics/Coils/Coils_Heating/Coils_Heating_4.png;default=module://kitPxGraphics/Coils/Coils_Heating/Coils_Heating_0.png;"/>
+      </ValueBinding>
+    </BoundLabel>
+
+    <Label layout="575.0,420.0,100.0,20.0" text="Heating Valve"/>
+
+    <Label layout="345.0,420.0,100.0,20.0" text="Damper Pos"/>
+
+    <Label layout="740.0,475.0,100.0,20.0" text="Room Temp"/>
+
+    <Label layout="880.0,320.0,110.0,20.0" text="Discharge Air Temp"/>
+
+    <BoundLabel layout="800.0,415.0,50.0,50.0" image="module://kitPxGraphics/Misc/Arrows/arrowDown.png"/>
+
+    <BoundLabel layout="755.0,290.0,119.0,120.0" image="module://kitPxGraphics/Ductwork/Duct_Connector_Corner_NE.png"/>
+
+    <Label layout="195.0,550.0,140.0,20.0" text="Actual Airflow"/>
+
+    <Label layout="195.0,570.0,140.0,20.0" text="Actual Airflow Setpoint"/>
+
+    <Label layout="195.0,590.0,140.0,20.0" text="Min Airflow Setpoint"/>
+
+    <Label layout="195.0,610.0,140.0,20.0" text="Max Flow Cooling Setpoint"/>
+
+    <Label layout="435.0,550.0,110.0,20.0" text="Occupied Command"/>
+
+    <Label layout="435.0,570.0,110.0,20.0" text="Occupied Status"/>
+
+    <Label layout="435.0,590.0,110.0,20.0" text="Damper Pos"/>
+
+    <Label layout="435.0,610.0,110.0,20.0" text="Reheat Pct"/>
+
+    <Label layout="645.0,550.0,120.0,20.0" text="Occ Cooling Setpoint"/>
+
+    <Label layout="645.0,570.0,120.0,20.0" text="Occ Heating Setpoint"/>
+
+    <Label layout="645.0,590.0,120.0,20.0" text="Unocc Cooling Setpoint"/>
+
+    <Label layout="645.0,610.0,120.0,20.0" text="Unocc Heating Setpoint"/>
+
+    <Label layout="860.0,570.0,120.0,20.0" text="CO2 Level"/>
+
+    <Label layout="860.0,590.0,120.0,20.0" text="CO2 Setpoint"/>
+
+    <Label layout="0.0,0.0,1280.0,70.0" text="Welcome Center - VAV 3" font="bold 20.0pt SansSerif" foreground="white"/>
+
+  </CanvasPane>
+
+</ScrollPane>
+</content>
+</px>
